@@ -1,26 +1,28 @@
 import React from 'react'
 import Rating from './rating'
-
+import Link from 'next/link'
 
 export default function Product(props) {
     const { product } = props;
     return (
+  
+       
         <>
-            <div key={ product._id} className="card">
-                <a href = {`/product/${product._id}`}>
+            <Link href={`/product/${product._id}`}>
+                <div key={product._id} className="card">               
                     <img className="medium" src={product.image} alt={product.name} />
-                </a>
-                <div className="card-body">
-                    <a href={`/product/${product._id}`}>
+                    <div className="card-body">
                         <h2>{ product.name}</h2>
-                    </a>
-                    <Rating
-                        rating={product.rating}
-                        numReviews={product.numReviews}     
-                    />
-                    <div className="price">${ product.price} </div>
+                        <Rating
+                            rating={product.rating}
+                            numReviews={product.numReviews}     
+                        />
+                        <div className="price">${ product.price} </div>
+                    </div>
                 </div>
-            </div>
+            </Link>
         </>
+
+
     )
 }
