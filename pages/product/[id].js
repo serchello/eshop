@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import data from '../../public/data'
+import data from '../../backend/data'
 import Rating from '../../components/rating'
 import Master from '../../components/master'
 
@@ -61,7 +61,7 @@ export default function Productscreen(props) {
                                         {product.countInStock > 0 ? (
                                         <span className="success">In Stock</span>
                                         ) : (
-                                        <span className="error">Unavailable</span>
+                                        <span className="danger">Unavailable</span>
                                         )}
                                     </div>
                                     </div>
